@@ -1,19 +1,28 @@
 {
   "name": "mern_chat",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "repository": "https://github.com/teenybloom/mern_chat_application",
   "author": "Carol Hung <caroljhung@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/dotenv": "^6.1.0",
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.40",
+    "@types/mongoose": "^5.3.20",
+    "@types/node": "^11.9.5",
+    "@types/socket.io": "^2.1.2",
     "dotenv": "^6.2.0",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
     "mongoose": "^5.4.16",
     "socket.io": "^2.2.0"
   },
-  "scripts": {"start":"nodemon server.ts"},
+  "scripts": {
+    "start": "tsc && nodemon server.js"
+  },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "typescript": "^3.3.3333"
   }
 }
