@@ -13,7 +13,7 @@ const io = socketIO(app)
 app.use(router.routes()).use(router.allowedMethods());
 
 // Connect to Database
-mongoose.connect(`mongodb://${process.env.DB_USEr}:${process.env.DB_PASSWORD}${process.env.DB_PATH}`)
+mongoose.connect(`mongodb://${process.env.DB_USEr}:${process.env.DB_PASSWORD}${process.env.DB_PATH}`, { useNewUrlParser: true})
     .then(result => console.log('Database Connected...'))
     .catch(err => {throw err})
 

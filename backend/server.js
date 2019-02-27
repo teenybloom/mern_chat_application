@@ -11,11 +11,9 @@ const io = socketIO(app);
 // Router Middleware
 app.use(router.routes()).use(router.allowedMethods());
 // Connect to Database
-mongoose.connect(process.env.DATABASE_CONNECTION, (err, db) => {
-    if (err)
-        throw err;
-    console.log('MongoDB Connected...');
-});
+mongoose.connect(`mongodb://${process.env.DB_USEr}:${process.env.DB_PASSWORD}${process.env.DB_PATH}`, { useNewUrlParser: true })
+    .then(result => console.log('Database Connected...'))
+    .catch(err => { throw err; });
 io.on('connection', (socket) => {
     console.log("a user connected.");
 });
