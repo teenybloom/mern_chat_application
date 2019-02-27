@@ -11,5 +11,9 @@
     "koa-router": "^7.4.0",
     "mongoose": "^5.4.16",
     "socket.io": "^2.2.0"
+  },
+  "scripts": {"start":"nodemon server.ts"},
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
