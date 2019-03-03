@@ -1,6 +1,6 @@
-"use strict";
 //Require Mongoose
 const mongoose = require('mongoose');
+
 //define Schema
 const userSchema = mongoose.Schema({
     name: String,
@@ -10,5 +10,6 @@ const userSchema = mongoose.Schema({
         room: String,
         message: String
     }
-});
-module.exports = mongoose.model('userModel', userSchema);
+ });
+
+ module.exports = mongoose.model('userModel', userSchema);
