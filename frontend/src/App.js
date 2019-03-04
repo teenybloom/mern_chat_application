@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header';
+import ChatBody from './components/chatBody';
+import Footer from './components/footer';
+import 'bulma';
 
 class App extends Component {
 
@@ -9,20 +12,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          <Header />
+          <ChatBody />
+          <Footer />
       </div>
     );
   }
