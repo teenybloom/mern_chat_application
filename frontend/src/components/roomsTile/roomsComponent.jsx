@@ -4,10 +4,20 @@ class Rooms extends Component {
     state = {  }
     render() { 
         return ( 
-            <React.Fragment>
-                <p className="title">Rooms</p>
-                <p>So many rooms</p>
-            </React.Fragment>
+            <section className="hero is-medium tile-border">
+                <div className="hero-head">
+                    <p className="title">Rooms</p>
+                </div>
+
+                <div className="hero-body">
+                </div>
+
+                <div className="hero-foot">
+                    <footer className="section is-small">
+                        <h1>currentRoom</h1>
+                    </footer>
+                </div>
+            </section>
         );
     }
 }

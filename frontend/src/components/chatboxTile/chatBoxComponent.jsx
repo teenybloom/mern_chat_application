@@ -8,16 +8,34 @@
 
 
 import React, { Component } from 'react';
+import InputArea from './inputAreaSection';
+import MessageArea from './messageAreaSection';
 
 class ChatBox extends Component {
-    state = {  }
+    state = {
+        chatBoxTitle: 'Current Chat Room',
+    }
+    styles = {
+        height: '100%',
+    }
     render() { 
         return ( 
                 <React.Fragment>
-                    <p className="title">Chatbox</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
-                    <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-                    <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
+                    <section className="hero is-medium tile-border">
+                        <div className="hero-head">
+                            <p className="title">{this.state.chatBoxTitle}</p>
+                        </div>
+
+                        <div className="hero-body">
+                            <MessageArea />
+                        </div>
+
+                        <div className="hero-foot">
+                            <footer className="section is-small">
+                                <InputArea />
+                            </footer>
+                        </div>
+                    </section>
                 </React.Fragment>
         );
     }

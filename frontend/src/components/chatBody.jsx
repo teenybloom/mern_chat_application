@@ -4,28 +4,18 @@ import ChatBox from './chatboxTile/chatBoxComponent';
 import Users from './usersTile/usersComponent';
 class ChatBody extends Component {
     state = {  }
-
+    styles = {
+        height: 200,
+    }
     render() { 
         return ( 
-            <div className="container is-fluid section">
-                <div className="tile is-ancestor">
-                    <div className="tile is-2 is-vertical is-parent">
-                        <div className="tile is-child box">
-                            <Rooms />
-                        </div>
-                    </div>
-                    <div className="tile is-2 is-vertical is-parent">
-                        <div className="tile is-child box">
-                            <Users />
-                        </div>
-                    </div>
-                <div className="tile is-parent">
-                    <div className="tile is-child box">
-                        <ChatBox />
-                    </div>
+            <div className="container is-fluid section" style = {this.state.height}>
+                <div className = "columns">
+                    <div class="column is-2"><Rooms /></div>
+                    <div class="column is-2"><Users /></div>
+                    <div class="column"><ChatBox /></div>
                 </div>
             </div>
-        </div>
         );
     }
 }
