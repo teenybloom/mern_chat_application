@@ -27,6 +27,10 @@
   border: 2px solid turquoise;
 }
 
+.round-pic {
+  
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
