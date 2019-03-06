@@ -7,7 +7,7 @@ const cors = require('cors')
 
 const chatroom = require('./chatRoom');
 const roomManager = require('./roomManager');
-const connection_log = require('../models/log')
+const connection_log = require('../models/connectionLog')
 
 // Router Middleware
 app.use(cors({origin:'*'}))

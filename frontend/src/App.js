@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router';
 import io from 'socket.io-client';
 import './App.css';
 import Header from './components/header';
@@ -21,9 +22,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <BrowserRouter>
+        <Switch>
+          <Route to='' component={}>
           <Header />
           <LandingBody />
           <Footer />
+          </Route>
+        </Switch>
+      </BrowserRouter>
       </div>
     );
   }
