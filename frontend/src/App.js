@@ -1,36 +1,28 @@
 import React, { Component } from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router';
-import io from 'socket.io-client';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Header from './components/header';
-//import ChatBody from './components/chatBody';
-import LandingBody from './components/landingBody';
 import Footer from './components/footer';
 import 'bulma';
 
 
+import RegistrationPage from './pages/RegistrationPage';
+import ChatRoomPage from './pages/ChatRoom';
+
+
 class App extends Component {
-
-  constructor(props){
-    super(props);
-
-    const socket = io('http://localhost:3030');
-    socket.emit('connection');
-    socket.emit('disconnect');
-  }
 
   render() {
     return (
       <div className="App">
+      <Header />
       <BrowserRouter>
         <Switch>
-          <Route to='' component={}>
-          <Header />
-          <LandingBody />
-          <Footer />
-          </Route>
+          <Route exact path='/' component={RegistrationPage} />
+          <Route path='/chatrooms' component={ChatRoomPage} />
         </Switch>
       </BrowserRouter>
+      <Footer />
       </div>
     );
   }
