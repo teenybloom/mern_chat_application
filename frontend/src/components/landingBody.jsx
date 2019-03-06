@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoginForm from './forms/login';
+import LoginNameForm from './forms/loginNameForm';
 
 class LandingBody extends Component {
     state = {  }
@@ -12,7 +12,7 @@ class LandingBody extends Component {
                         <h3 className="title has-text-grey">Login</h3>
                         <p className="subtitle has-text-grey">Please login to proceed.</p>
                         <div className="box">
-                            <LoginForm />
+                            <LoginNameForm />
                         </div>
                         <p className="has-text-grey">
                             <a href="../">Sign Up</a> &nbsp;·&nbsp;
