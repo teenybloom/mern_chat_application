@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const userChatLogSchema = new mongoose.Schema({
+    RoomName: String,
     Sender: String,
     Sender_SocketID: String,
     Recievers: [],

@@ -6,8 +6,13 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 
 const chatroom = require('./chatRoom');
-const roomManager = require('./roomManager');
+const RoomManager = require('./roomManager');
+const ClientManager = require('./clientManager');
 const connection_log = require('../models/connectionLog')
+
+
+const clientManager = ClientManager();
+const roomManager = RoomManager();
 
 // Router Middleware
 app.use(cors({origin:'*'}))
@@ -32,16 +37,28 @@ mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}${p
                 if(err) console.log(err);
             });
 
+            clientManager.addClient(socket);
 
-            socket.join('')
+            socket.on('register', clientManager.registerClient(socket, userName));
+
+            socket.on('join', (socket) => {
+                console.log(`${socket.id} has joined`)
+            });
+
+            socket.on('leave', (socket) =>{
+
+            })
+
+            socket.on('chatrooms', roomManager.get)
+
+            socket.on('message', (message) =>{
+                io.emit()
+            })
 
             socket.on('disconnect', (socket) => {
-            
                 console.log(`User ${socket.id} has disconnected`)
             });
         })
-
-        
     )
     .catch(err => {throw err})
 

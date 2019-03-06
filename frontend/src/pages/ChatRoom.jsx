@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import RoomsTile from '../components/roomsTile/roomsComponent'
+import Rooms from '../components/roomsTile/roomsComponent'
 
 export default class ChatRooms extends Component {
   render() {
     return (
-      <div>
-        
+      <div className="container">
+        <h2>Select a Room</h2>
+        <Rooms />
       </div>
     )
   }

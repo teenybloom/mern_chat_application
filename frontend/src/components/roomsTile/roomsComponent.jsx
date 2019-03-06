@@ -1,25 +1,38 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-class Rooms extends Component {
-    state = {  }
-    render() { 
-        return ( 
-            <section className="hero is-medium tile-border">
-                <div className="hero-head">
-                    <p className="title">Rooms</p>
-                </div>
+const socket = require('../../services/socket-client')
 
-                <div className="hero-body">
-                </div>
+export default class roomsComponent extends Component {
+    constructor(props){
+        super(props)
 
-                <div className="hero-foot">
-                    <footer className="section is-small">
-                        <h1>currentRoom</h1>
-                    </footer>
-                </div>
-            </section>
-        );
+        this.state = { AvailableRooms: ['Crustaceans', 'Marine Mammals', 'Ocean Fishes'], roomSelection: null}
+    } 
+
+    handleRoomSelection = (name) => {
+        this.setState({ roomSelection: name})
     }
+
+    getRooms = () =>{
+        return this.state.AvailableRooms
+            .map(rooms =>    
+                <div className="column card" >
+                    <button className="button" onClick={() => this.handleRoomSelection(rooms)}>
+                        {rooms}
+                    </button>
+                </div>);
+    }
+
+  render() {
+    
+    return (
+    
+      <div className="columns is-centered">
+        <div className="">
+        <br/>
+        {this.getRooms()}
+        </div>
+      </div>
+    )
+  }
 }
- 
-export default Rooms;
