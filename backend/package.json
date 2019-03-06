@@ -6,20 +6,21 @@
   "author": "Carol Hung <caroljhung@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@koa/cors": "2",
     "@types/dotenv": "^6.1.0",
     "@types/koa": "^2.0.48",
     "@types/koa-router": "^7.0.40",
     "@types/mongoose": "^5.3.20",
     "@types/node": "^11.9.5",
     "@types/socket.io": "^2.1.2",
+    "cors": "^2.8.5",
     "dotenv": "^6.2.0",
-    "koa": "^2.7.0",
-    "koa-router": "^7.4.0",
+    "express": "^4.16.4",
     "mongoose": "^5.4.16",
     "socket.io": "^2.2.0"
   },
   "scripts": {
-    "start": "tsc && nodemon server.js"
+    "start": "nodemon ./server/server.js"
   },
   "devDependencies": {
     "nodemon": "^1.18.10",

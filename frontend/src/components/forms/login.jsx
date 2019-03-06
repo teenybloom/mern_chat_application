@@ -7,7 +7,7 @@ class LoginForm extends Component {
             <form>
                 <div className="field">
                     <div className="control">
-                        <input className="input is-large" type="email" placeholder="Your Email" autofocus=""/>
+                        <input className="input is-large" type="email" placeholder="Your Email" autoFocus=""/>
                     </div>
                 </div>
                 <div className="field">

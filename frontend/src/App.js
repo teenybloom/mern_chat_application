@@ -7,12 +7,16 @@ import LandingBody from './components/landingBody';
 import Footer from './components/footer';
 import 'bulma';
 
+
 class App extends Component {
 
+  constructor(props){
+    super(props);
 
-  socket= io('http://localhost')
-
-  
+    const socket = io('http://localhost:3030');
+    socket.emit('connection');
+    socket.emit('disconnect');
+  }
 
   render() {
     return (
