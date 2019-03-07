@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-
-const socket = require('../../services/socket-client')
+import { Link } from 'react-router-dom'
 
 export default class roomsComponent extends Component {
     constructor(props){
@@ -17,14 +16,15 @@ export default class roomsComponent extends Component {
         return this.state.AvailableRooms
             .map(rooms =>    
                 <div className="column card" >
-                    <button className="button" onClick={() => this.handleRoomSelection(rooms)}>
-                        {rooms}
-                    </button>
+                    <Link to={`/chatrooms/${rooms.split(' ').join('')}`}>
+                        <button className="button" onClick={() => this.handleRoomSelection(rooms)}>
+                            {rooms}
+                        </button>
+                    </Link>
                 </div>);
     }
 
   render() {
-    
     return (
     
       <div className="columns is-centered">

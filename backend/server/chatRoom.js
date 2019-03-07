@@ -19,6 +19,10 @@ module.exports = () =>{
     broadcastMessages = (msg) => {
         chatroomUsers.map(user => user.emit('message', msg))
     };
+
+    getChatHistory = () => {
+        return chatHistory.splice()
+    }
 }
 
 

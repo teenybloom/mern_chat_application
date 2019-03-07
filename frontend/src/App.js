@@ -8,6 +8,7 @@ import 'bulma';
 
 import RegistrationPage from './pages/RegistrationPage';
 import ChatRoomPage from './pages/ChatRoom';
+import Chat from './pages/Chat'
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={RegistrationPage} />
           <Route path='/chatrooms' component={ChatRoomPage} />
+          <Route path='/chatrooms/:roomName' component={Chat} />
         </Switch>
       </BrowserRouter>
       <Footer />

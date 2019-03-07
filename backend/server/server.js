@@ -49,7 +49,7 @@ mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}${p
 
             })
 
-            socket.on('chatrooms', roomManager.get)
+            socket.on('chatrooms');
 
             socket.on('message', (message) =>{
                 io.emit()
